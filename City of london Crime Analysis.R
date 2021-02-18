@@ -34,9 +34,9 @@ library(dplyr)
 #########################
 # Getting the data
 # Create a path 
-path = "C:/Users/ASUS/Downloads/final assignments/data science/full data set/New folder (2)"
-path2 = "C:/Users/ASUS/Downloads/final assignments/data science/full data set/Outcome"
-path3 = "C:/Users/ASUS/Downloads/final assignments/data science/full data set/StopandSearch"
+path = "C:/Users/xxxxxxxxxxxx/crime"
+path2 = "C:/Users/xxxxxxx/Outcome"
+path3 = "C:/Users/xxxxxxxxxx/StopandSearch"
 
 # combining all the files into one file from the path
 
@@ -83,7 +83,7 @@ outcome$month <- month(ymd(outcome$new_date))
 # separate(new_date, into = c("Year", "Month", "date"), sep = "-")
 crime = subset(crime, select = -c(Context,Reported.by,new_date) )
 
-outcome = subset(outcome, select = -c(ï..Crime.ID,Location,Reported.by,Falls.within,new_date) )
+outcome = subset(outcome, select = -c(Ã¯..Crime.ID,Location,Reported.by,Falls.within,new_date) )
 
 #crime$Month <- month.abb[as.numeric(crime$Month)]
 
@@ -1253,7 +1253,7 @@ new_ss$Officer.defined.ethnicity <- factor(new_ss$Officer.defined.ethnicity)
 new_ss$Age.range <- factor(new_ss$Age.range)
 
 
-new_ss <- subset(new_ss, select = -c(Self.defined.ethnicity,ï..Type) )
+new_ss <- subset(new_ss, select = -c(Self.defined.ethnicity,Ã¯..Type) )
 
 #---------------------------------------------------------------
 #Dividing Date into two seprate columns
@@ -1465,8 +1465,8 @@ crime_new<-crime_new[!(is.na(crime_new$Last.outcome.category) | crime_new$Last.o
 crime_new<-crime_new[!(is.na(crime_new$Longitude) | crime_new$Longitude==""), ]
 crime_new<-crime_new[!(is.na(crime_new$Latitude) | crime_new$Latitude==""), ]
 crime_new<-crime_new[!(is.na(crime_new$Location) | crime_new$Location==""), ]
-crime_new<-crime_new[!(is.na(crime_new$ï..Crime.ID) | crime_new$Longitude==""), ]
-crime_new = subset(crime_new, select = -c(Falls.within,Location,ï..Crime.ID,Month) )
+crime_new<-crime_new[!(is.na(crime_new$Ã¯..Crime.ID) | crime_new$Longitude==""), ]
+crime_new = subset(crime_new, select = -c(Falls.within,Location,Ã¯..Crime.ID,Month) )
 
 
 summary(crime_new)
